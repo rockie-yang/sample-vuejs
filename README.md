@@ -1,4 +1,4 @@
-# sample-vuejs
+# datalab-frontend
 
 ## Project setup
 ```

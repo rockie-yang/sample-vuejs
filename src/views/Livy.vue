@@ -1,5 +1,16 @@
 <template>
-  <div class="livy">
-    <iframe src="http://lab.knockdata.com/livy" title="livy" width="100%" height="1024px"></iframe>
+  <div>
+    <b-embed type="iframe" id="livy" class="full-window" src="http://lab.knockdata.com/livy" />
   </div>
 </template>
+
+<script lang="ts">
+import Vue from "vue";
+export default Vue.extend({});
+</script>
+
+<style scoped>
+.full-window {
+  height: 100%;
+}
+</style>

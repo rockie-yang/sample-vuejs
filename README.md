@@ -1,4 +1,4 @@
-# datalab-frontend
+# bootstrap-test
 
 ## Project setup
 ```

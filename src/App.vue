@@ -1,51 +1,54 @@
 <template>
   <div id="app">
-    <NavBar />
-    <router-view />
+    <div id="nav">
+      <Header />
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar justify-content-start">
+          <SideBar />
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <router-view />
+        </main>
+      </div>
+    </div>
   </div>
 </template>
 <script lang="ts">
 import Vue from "vue";
-import NavBar from "./views/NavBar.vue";
-import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
-Vue.use(BootstrapVue);
-Vue.use(IconsPlugin);
+import Header from "@/components/Header.vue";
+import SideBar from "@/components/SideBar.vue";
 
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap-vue/dist/bootstrap-vue.css";
 export default Vue.extend({
-  data() {
-    return {
-      logoWidth: 30
-    };
-  },
   components: {
-    NavBar
+    Header,
+    SideBar
   }
 });
 </script>
-<style>
+<style lang="scss">
+@import "assets/dashboard.css";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-}
+// #nav {
+//   padding: 30px;
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+//   a {
+//     font-weight: bold;
+//     color: #2c3e50;
 
-.active {
-  background-color: #ccc;
-}
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+//     &.router-link-exact-active {
+//       color: white;
+//     }
+//   }
+// }
 </style>

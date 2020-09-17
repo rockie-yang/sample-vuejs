@@ -2,7 +2,7 @@
   <b-col md="3">
     <b-card
       :title="job.name"
-      :img-src="img"
+      :img-src="'https://picsum.photos/600/300/?image=' + job.id"
       img-top
       tag="article"
       style="max-width:20rem"
@@ -18,10 +18,12 @@
 <script lang="ts">
 import Vue from "vue";
 export default Vue.extend({
-  props: ["job"],
+  props: ["job", "id"],
   computed: {
     img() {
-      return `https://picsum.photos/600/300/?image=${this.job.id}`;
+      // console.log(this.job);
+      // const id = this.job.id;
+      return "https://picsum.photos/600/300/?image=25";
     }
   }
 });

@@ -1,5 +1,5 @@
 <template>
   <div>
-    <b-embed type="iframe" id="livy" src="http://lab.knockdata.com/jupyterhub" />
+    <b-embed type="iframe" id="jupyterhub" src="http://lab.knockdata.com/jupyterhub" />
   </div>
 </template>

@@ -4,14 +4,16 @@
       type="iframe"
       id="prometheus"
       class="full-window"
-      src="http://lab.knockdata.com/prometheus"
+      :src="hostDNS + '/prometheus'"
     />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-export default Vue.extend({});
+export default Vue.extend({
+  props: ["hostDNS"]
+});
 </script>
 
 <style scoped>

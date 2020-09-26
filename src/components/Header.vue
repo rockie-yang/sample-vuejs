@@ -28,7 +28,7 @@ import Vue from "vue";
 export default Vue.extend({
   data() {
     return {
-      logo: require(`../assets/knockdatawhite.svg`)
+      logo: require(`../assets/knockdatalight.svg`)
     };
   }
 });

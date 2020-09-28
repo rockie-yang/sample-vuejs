@@ -3,7 +3,7 @@
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
       <a
         class="navbar-brand col-sm-3 col-md-2 mr-0"
-        href="https://getbootstrap.com/docs/4.0/examples/dashboard/#"
+        href="https://lab.knockdata.com/"
       >
         <img :src="logo" class="brand" />
         Knock Data
@@ -16,7 +16,7 @@
       />
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="https://getbootstrap.com/docs/4.0/examples/dashboard/#">Sign out</a>
+          <a class="nav-link" href="https://lab.knockdata.com/#">Sign out</a>
         </li>
       </ul>
     </nav>

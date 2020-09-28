@@ -1,36 +1,22 @@
 <template>
   <div>
     <Header />
-    <b-container>
-      <b-row align-v="center">
-        <JobCard v-for="job in jobs" :key="job.id" :job="job" />
-      </b-row>
-    </b-container>
+    <UseCaseDecks />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import JobCard from "@/components/JobCard.vue";
+import UseCaseDecks from "@/components/UseCaseDecks.vue";
 export default Vue.extend({
-  components: { JobCard },
+  components: { UseCaseDecks },
   mounted() {
-    this.fetchData();
+    // this.fetchData();
   },
   data() {
-    return {
-      jobs: []
-    };
+    return {};
   },
-  methods: {
-    async fetchData() {
-      const res = await fetch("jobs.json");
-      const val = await res.json();
-      this.jobs = val;
-
-      console.log(val);
-    }
-  }
+  methods: {}
 });
 // export default class Home extends Vue {}
 </script>

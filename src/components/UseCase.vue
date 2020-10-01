@@ -5,7 +5,7 @@
     img-top
     tag="article"
     style="max-width:20rem max-height=10rem height=10rem"
-    class="mb-2 "
+    class="mb-2 text-center"
     footer-tag="footer"
   >
     <b-card-text>&nbsp;</b-card-text>

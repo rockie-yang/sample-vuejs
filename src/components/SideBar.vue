@@ -64,7 +64,7 @@ export default Vue.extend({
           name: "Minio",
           logo: require(`../assets/minioio-icon.svg`),
           to: "/minio",
-          href: `https://minio.knockdata.com`
+          href: `https://lab.knockdata.com/minio`
         },
         {
           name: "Neo4j",

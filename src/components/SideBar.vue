@@ -2,12 +2,6 @@
   <div class="sidebar-sticky">
     <ul class="nav flex-column">
       <li v-for="app in apps" :key="app.name">
-        <!-- <router-link :to="app.to">
-          <a class="nav-link active" :to="app.to">
-            <img :src="app.logo" class="logo" />
-            {{app.name}}
-          </a>
-        </router-link> -->
         <a class="nav-link active" :href="app.href" target="_blank">
           <img :src="app.logo" class="logo" />
           {{ app.name }}
@@ -21,56 +15,56 @@ import Vue from "vue";
 export default Vue.extend({
   data() {
     const logoPath = "@/assets";
-    const hostDNS = "https://lab.knockdata.com";
+    const hostDNS = "lab.knockdata.com";
     return {
       apps: [
         {
           name: "JupyterHub",
           logo: require(`../assets/Jupyter_logo.svg`),
           to: "/jupyterhub",
-          href: `${hostDNS}/jupyterhub`
+          href: `https://${hostDNS}/jupyterhub`
         },
         {
           name: "Grafana",
           logo: require(`../assets/grafana_icon.svg`),
           to: "/grafana",
-          href: `${hostDNS}/grafana`
+          href: `https://${hostDNS}/grafana`
         },
         {
           name: "Airflow",
           logo: require(`../assets/airflow.svg`),
           to: "/airflow",
-          href: `${hostDNS}/airflow`
+          href: `https://${hostDNS}/airflow`
         },
         {
           name: "Livy",
           logo: require(`../assets/livy.svg`),
           to: "/livy",
-          href: `${hostDNS}/livy`
+          href: `https://${hostDNS}/livy`
         },
         {
           name: "SparkHistory",
           logo: require(`../assets/Apache_Spark_logo.svg`),
           to: "/history-server",
-          href: `${hostDNS}/history-server`
+          href: `https://${hostDNS}/history-server`
         },
         {
           name: "Prometheus",
           logo: require(`../assets/prometheusio-icon.svg`),
           to: "/prometheus",
-          href: `${hostDNS}/prometheus`
+          href: `https://${hostDNS}/prometheus`
         },
         {
           name: "Minio",
           logo: require(`../assets/minioio-icon.svg`),
           to: "/minio",
-          href: `https://lab.knockdata.com/minio`
+          href: `https://minio.${hostDNS}`
         },
         {
           name: "Neo4j",
           logo: require(`../assets/neo4j-icon.svg`),
           to: "/neo4j",
-          href: `${hostDNS}/neo4j`
+          href: `https://neo4j.${hostDNS}`
         }
       ]
     };

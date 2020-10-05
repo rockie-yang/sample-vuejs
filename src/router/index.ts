@@ -13,19 +13,19 @@ const routes: Array<RouteConfig> = [
     props: { hostDNS: hostDNS }
   },
   {
-    path: "/airflow",
-    name: "Airflow",
+    path: "/FraudDetection",
+    name: "FraudDetection",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Airflow.vue"),
-    meta: { title: "Flexible Data Pipeline with Airflow" },
-    props: { hostDNS: hostDNS }
+      import(/* webpackChunkName: "about" */ "../views/FraudDetection.vue"),
+    meta: { title: "Fraud Detection" },
+    // props: { hostDNS: hostDNS }
   },
   {
-    path: "/grafana",
-    name: "Grafana",
+    path: "/Customer360",
+    name: "Customer360",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -35,8 +35,8 @@ const routes: Array<RouteConfig> = [
     props: { hostDNS: hostDNS }
   },
   {
-    path: "/jupyterhub",
-    name: "JupyterHub",
+    path: "/RiskCompliance",
+    name: "RiskCompliance",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -46,8 +46,8 @@ const routes: Array<RouteConfig> = [
     props: { hostDNS: hostDNS }
   },
   {
-    path: "/livy",
-    name: "Livy",
+    path: "/LeverageData",
+    name: "LeverageData",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -56,52 +56,6 @@ const routes: Array<RouteConfig> = [
     meta: { title: "Spark Cluster Manager" },
     props: { hostDNS: hostDNS }
   },
-
-  {
-    path: "/minio",
-    name: "Minio",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Minio.vue"),
-    meta: { title: "S3 Compatible Object Store" },
-    props: { hostDNS: hostDNS }
-  },
-  {
-    path: "/neo4j",
-    name: "Neo4j",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Neo4j.vue"),
-    meta: { title: "Graph Database" },
-    props: { hostDNS: hostDNS }
-  },
-  {
-    path: "/history-server",
-    name: "SparkHistoryServer",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/SparkHistory.vue"),
-    meta: { title: "Spark History Server" },
-    props: { hostDNS: hostDNS }
-  },
-  {
-    path: "/prometheus",
-    name: "Prometheus",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Prometheus.vue"),
-    meta: { title: "Prometheus" },
-    props: { hostDNS: hostDNS }
-  },
-
 ];
 
 const router = new VueRouter({

@@ -14,7 +14,9 @@
     <b-card-text>{{ usecase.description }}</b-card-text>
     <template v-slot:footer>
       <div class="center-block text-center" align="center">
-        <b-button variant="primary">Knock It</b-button>
+        <router-link :to="usecase.url">
+          <b-button variant="primary">Knock It</b-button>
+        </router-link>
       </div>
     </template>
   </b-card>

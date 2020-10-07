@@ -7,7 +7,13 @@ import router from "./router";
 
 Vue.config.productionTip = false;
 
+import 'codemirror';
+// import 'vue-codemirror';
+// import 'codemirror/lib/codemirror.css'
+// Vue.use(VueCodemirror);
+
 new Vue({
   router,
   render: h => h(App)
 }).$mount("#app");
+

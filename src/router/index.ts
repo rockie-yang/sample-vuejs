@@ -30,7 +30,7 @@ const routes: Array<RouteConfig> = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Grafana.vue"),
+      import(/* webpackChunkName: "about" */ "../views/Customer360.vue"),
     meta: { title: "Clear System Monitoring with Grafana" },
     props: { hostDNS: hostDNS }
   },
@@ -41,8 +41,8 @@ const routes: Array<RouteConfig> = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/JupyterHub.vue"),
-    meta: { title: "Interactive Notebook Environment" },
+      import(/* webpackChunkName: "about" */ "../views/RiskCompliance.vue"),
+    meta: { title: "Risk Compliance" },
     props: { hostDNS: hostDNS }
   },
   {

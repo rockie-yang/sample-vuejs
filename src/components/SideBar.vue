@@ -3,8 +3,8 @@
     <ul class="nav flex-column">
       <li v-for="app in apps" :key="app.name">
         <a class="nav-link active" :href="app.href" target="_blank">
-          <img :src="app.logo" class="logo" />
-          {{ app.name }}
+          <span class="app">{{ app.name }}</span
+          ><span> <img :src="app.logo" class="logo float-left"/></span>
         </a>
       </li>
     </ul>
@@ -75,5 +75,9 @@ export default Vue.extend({
 .logo {
   width: 18px;
   height: 18px;
+}
+
+.app {
+  padding-left: 20px;
 }
 </style>

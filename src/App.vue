@@ -22,6 +22,8 @@
 import Vue from "vue";
 import Header from "@/components/Header.vue";
 import SideBar from "@/components/SideBar.vue";
+// import VueCodemirror from "vue-codemirror";
+// Vue.use(VueCodemirror);
 
 export default Vue.extend({
   components: {

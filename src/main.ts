@@ -8,9 +8,12 @@ import router from "./router";
 Vue.config.productionTip = false;
 
 import 'codemirror';
-// import 'vue-codemirror';
-// import 'codemirror/lib/codemirror.css'
-// Vue.use(VueCodemirror);
+import Chart from 'chart.js'
+import VueChartkick from 'vue-chartkick';
+
+Vue.use(VueChartkick, { adapter: Chart });
+
+// Vue.use(Chartkick.use(Chart))
 
 new Vue({
   router,

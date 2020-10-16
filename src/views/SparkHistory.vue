@@ -4,7 +4,7 @@
       type="iframe"
       id="spark-history"
       class="full-window"
-      src="https://lab.knockdata.com//history-server"
+      src="https://lab.skysager.com//history-server"
     />
   </div>
 </template>

@@ -2,9 +2,9 @@
   <div class="sidebar-sticky">
     <ul class="nav flex-column">
       <li v-for="app in apps" :key="app.name">
-        <a class="nav-link active" :href="app.href" target="_blank">
-          <span class="app">{{ app.name }}</span
-          ><span> <img :src="app.logo" class="logo float-left"/></span>
+        <a class="nav-link active text-light" :href="app.href" target="_blank">
+          <img :src="app.logo" class="logo" />
+          <span class="app">{{ app.name }}</span>
         </a>
       </li>
     </ul>
@@ -15,7 +15,7 @@ import Vue from "vue";
 export default Vue.extend({
   data() {
     const logoPath = "@/assets";
-    const hostDNS = "lab.knockdata.com";
+    const hostDNS = "lab.skysager.com";
     return {
       apps: [
         {
@@ -59,13 +59,13 @@ export default Vue.extend({
           logo: require(`../assets/minioio-icon.svg`),
           to: "/minio",
           href: `https://minio.${hostDNS}`
-        },
-        {
-          name: "Neo4j",
-          logo: require(`../assets/neo4j-icon.svg`),
-          to: "/neo4j",
-          href: `https://neo4j.${hostDNS}`
         }
+        // {
+        //   name: "Neo4j",
+        //   logo: require(`../assets/neo4j-icon.svg`),
+        //   to: "/neo4j",
+        //   href: `https://neo4j.${hostDNS}`
+        // }
       ]
     };
   }
@@ -73,11 +73,19 @@ export default Vue.extend({
 </script>
 <style lang="scss" scoped>
 .logo {
-  width: 18px;
-  height: 18px;
+  width: 2.5em;
+  height: 2.5em;
+  border: 0;
+  padding: 0;
+  // background: #32325d;
 }
 
+.sidebar-sticky {
+  background: #27293c;
+}
 .app {
-  padding-left: 20px;
+  padding-left: 12px;
+  font-weight: 550;
+  color: orange;
 }
 </style>

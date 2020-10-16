@@ -3,7 +3,7 @@
     <!-- Project Card Example -->
     <div class="card shadow mb-4">
       <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+        <h6 class="m-0 font-weight-bold text-primary">New Projects Progress</h6>
       </div>
       <div class="card-body">
         <h4 class="small font-weight-bold">
@@ -20,7 +20,7 @@
           ></div>
         </div>
         <h4 class="small font-weight-bold">
-          Sales Tracking <span class="float-right">40%</span>
+          Churn Prevention <span class="float-right">40%</span>
         </h4>
         <div class="progress mb-4">
           <div
@@ -46,7 +46,7 @@
           ></div>
         </div>
         <h4 class="small font-weight-bold">
-          Payout Details <span class="float-right">80%</span>
+          Anti Money Laundry<span class="float-right">80%</span>
         </h4>
         <div class="progress mb-4">
           <div
@@ -59,7 +59,7 @@
           ></div>
         </div>
         <h4 class="small font-weight-bold">
-          Account Setup <span class="float-right">Complete!</span>
+          Next Best Action <span class="float-right">Complete!</span>
         </h4>
         <div class="progress">
           <div

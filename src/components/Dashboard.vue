@@ -2,17 +2,18 @@
   <div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">Data Lake Dashboard</h1>
-      <a
+      <!-- <h1 class="h3 mb-0 text-light">Data Lake Dashboard</h1> -->
+      <div></div>
+      <!-- <a
         href="#"
-        class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-        ><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a
-      >
+        class="d-none d-sm-inline-block btn btn-sm btn-light shadow-sm"
+        ><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a -->
+      .
     </div>
 
     <!-- Content Row -->
     <div class="row">
-      <StatusCard title="Total Storage / Percentage" status="300 TB / 40%" />
+      <StatusCard title="Storage / Percentage" status="300 TB / 40%" />
       <StatusCard title="Models Running / Total" status="15 / 20" />
 
       <ProgressCard title="System Load" progress="70" />

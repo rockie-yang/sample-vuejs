@@ -1,18 +1,18 @@
 <template>
   <div class="row">
     <div class="col-lg-3 mb-4">
-      <div class="card bg-primary text-white shadow">
+      <div class="card bg-primary text-dark shadow">
         <div class="card-body">
           Primary
-          <div class="text-white-50 small">#4e73df</div>
+          <div class="small">#4e73df</div>
         </div>
       </div>
     </div>
     <div class="col-lg-3 mb-4">
-      <div class="card bg-success text-white shadow">
+      <div class="card bg-success text-dark shadow">
         <div class="card-body">
           Success
-          <div class="text-white-50 small">#1cc88a</div>
+          <div class="small">#1cc88a</div>
         </div>
       </div>
     </div>
@@ -41,10 +41,10 @@
       </div>
     </div>
     <div class="col-lg-3 mb-4">
-      <div class="card bg-secondary text-white shadow">
+      <div class="card bg-secondary text-dark shadow">
         <div class="card-body">
           Secondary
-          <div class="text-white-50 small">#858796</div>
+          <div class="small">#858796</div>
         </div>
       </div>
     </div>

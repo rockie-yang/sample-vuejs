@@ -5,8 +5,8 @@
       <div
         class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
       >
-        <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
-        <b-dropdown
+        <h6 class="m-0 font-weight-bold text-primary">Cost Demography</h6>
+        <!-- <b-dropdown
           id="dropdown-buttons"
           text=""
           class="m-2 shadow"
@@ -16,7 +16,7 @@
           <b-dropdown-item-button active
             >I'm a active button</b-dropdown-item-button
           >
-        </b-dropdown>
+        </b-dropdown> -->
       </div>
       <!-- Card Body -->
       <div class="card-body">

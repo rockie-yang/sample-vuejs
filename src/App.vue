@@ -1,12 +1,10 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <Header />
-    </div>
+    <Header />
     <div class="container-fluid">
       <div class="row">
         <nav
-          class="col-md-2 d-none d-md-block bg-light sidebar justify-content-start"
+          class="col-md-2 d-none d-md-block  bg-light sidebar justify-content-start"
         >
           <SideBar />
         </nav>
@@ -35,22 +33,22 @@ export default Vue.extend({
 <style lang="scss">
 // @import "assets/dashboard.css";
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: left;
-  color: #2c3e50;
-}
-body {
-  font-size: 0.875rem;
-}
+// #app {
+//   font-family: Avenir, Helvetica, Arial, sans-serif;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   text-align: left;
+//   color: #2c3e50;
+// }
+// body {
+//   font-size: 0.875rem;
+// }
 
-.feather {
-  width: 16px;
-  height: 16px;
-  vertical-align: text-bottom;
-}
+// .feather {
+//   width: 16px;
+//   height: 16px;
+//   vertical-align: text-bottom;
+// }
 
 /*
  * Sidebar

@@ -3,13 +3,13 @@ import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
-const hostDNS = "https://lab.knockdata.com";
+const hostDNS = "https://lab.skysager.com";
 const routes: Array<RouteConfig> = [
   {
     path: "/",
     name: "Home",
     component: Home,
-    meta: { title: "Let's Start Knock Data" },
+    meta: { title: "Let's Fly Over Cloud" },
     props: { hostDNS: hostDNS }
   },
   {

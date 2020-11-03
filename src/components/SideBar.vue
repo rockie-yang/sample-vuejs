@@ -59,13 +59,13 @@ export default Vue.extend({
           logo: require(`../assets/minioio-icon.svg`),
           to: "/minio",
           href: `https://minio.${hostDNS}`
+        },
+        {
+          name: "Neo4j",
+          logo: require(`../assets/neo4j-icon.svg`),
+          to: "/neo4j",
+          href: `https://neo4j.${hostDNS}`
         }
-        // {
-        //   name: "Neo4j",
-        //   logo: require(`../assets/neo4j-icon.svg`),
-        //   to: "/neo4j",
-        //   href: `https://neo4j.${hostDNS}`
-        // }
       ]
     };
   }

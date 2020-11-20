@@ -13,6 +13,17 @@ const routes: Array<RouteConfig> = [
     props: { hostDNS: hostDNS }
   },
   {
+    path: "/usecases",
+    name: "Use Cases",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../components/UseCaseDecks.vue"),
+    meta: { title: "Use Cases" },
+    // props: { hostDNS: hostDNS }
+  },
+  {
     path: "/FraudDetection",
     name: "FraudDetection",
     // route level code-splitting

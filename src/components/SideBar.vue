@@ -7,6 +7,16 @@
           <span class="app">{{ app.name }}</span>
         </a>
       </li>
+      <li class="divider nav-link active text-light"></li>
+      <!-- <li class="nav-link active text-light"> -->
+      <li>
+        <router-link to="/usecases" class="divider nav-link active text-light"
+          ><img :src="usecase.logo" class="logo" /><span class="app">{{
+            usecase.name
+          }}</span></router-link
+        >
+      </li>
+      <!-- </li> -->
     </ul>
   </div>
 </template>
@@ -17,6 +27,11 @@ export default Vue.extend({
     const logoPath = "@/assets";
     const hostDNS = "lab.skysager.com";
     return {
+      usecase: {
+        name: "Solutions",
+        logo: require(`../assets/solution.svg`),
+        to: "/usecases"
+      },
       apps: [
         {
           name: "JupyterHub",
@@ -64,13 +79,13 @@ export default Vue.extend({
           name: "Neo4j",
           logo: require(`../assets/neo4j-icon.svg`),
           to: "/neo4j",
-          href: `https://neo4j.${hostDNS}`
+          href: `https://neo4j.${hostDNS}:7473`
         },
         {
           name: "Flyte",
           logo: require(`../assets/flyte.svg`),
           to: "/flyte",
-          href: `http://flyte.${hostDNS}/console`
+          href: `https://flyte.${hostDNS}/console`
         }
       ]
     };

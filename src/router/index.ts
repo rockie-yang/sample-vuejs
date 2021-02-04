@@ -67,6 +67,17 @@ const routes: Array<RouteConfig> = [
     meta: { title: "Spark Cluster Manager" },
     props: { hostDNS: hostDNS }
   },
+  {
+    path: "/ServerLess",
+    name: "ServerLess",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/ServerLess.vue"),
+    meta: { title: "ServerLess" },
+    props: { hostDNS: hostDNS }
+  },
 ];
 
 const router = new VueRouter({

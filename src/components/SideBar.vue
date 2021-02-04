@@ -7,6 +7,14 @@
           <span class="app">{{ app.name }}</span>
         </a>
       </li>
+      <li>
+        <router-link to="/ServerLess" class="divider nav-link active text-light"
+          ><img :src="lambda" class="logo" /><span class="app">
+            Server Less</span
+          ></router-link
+        >
+      </li>
+
       <li class="divider nav-link active text-light"></li>
       <!-- <li class="nav-link active text-light"> -->
       <li>
@@ -27,69 +35,70 @@ export default Vue.extend({
     const logoPath = "@/assets";
     const hostDNS = "lab.skysager.com";
     return {
+      lambda: require(`../assets/lambda_logo.svg`),
       usecase: {
         name: "Solutions",
         logo: require(`../assets/solution.svg`),
-        to: "/usecases"
+        to: "/usecases",
       },
       apps: [
         {
           name: "JupyterHub",
           logo: require(`../assets/Jupyter_logo.svg`),
           to: "/jupyterhub",
-          href: `https://${hostDNS}/jupyterhub`
+          href: `https://${hostDNS}/jupyterhub`,
         },
         {
           name: "Grafana",
           logo: require(`../assets/grafana_icon.svg`),
           to: "/grafana",
-          href: `https://${hostDNS}/grafana`
+          href: `https://${hostDNS}/grafana`,
         },
         {
           name: "Airflow",
           logo: require(`../assets/airflow.svg`),
           to: "/airflow",
-          href: `https://${hostDNS}/airflow`
+          href: `https://${hostDNS}/airflow`,
         },
         {
           name: "Livy",
           logo: require(`../assets/livy.svg`),
           to: "/livy",
-          href: `https://${hostDNS}/livy`
+          href: `https://${hostDNS}/livy`,
         },
         {
           name: "SparkHistory",
           logo: require(`../assets/Apache_Spark_logo.svg`),
           to: "/history-server",
-          href: `https://${hostDNS}/history-server`
+          href: `https://${hostDNS}/history-server`,
         },
         {
           name: "Prometheus",
           logo: require(`../assets/prometheusio-icon.svg`),
           to: "/prometheus",
-          href: `https://${hostDNS}/prometheus`
+          href: `https://${hostDNS}/prometheus`,
         },
         {
           name: "Minio",
           logo: require(`../assets/minioio-icon.svg`),
           to: "/minio",
-          href: `https://minio.${hostDNS}`
+          href: `https://minio.${hostDNS}`,
         },
         {
           name: "Neo4j",
           logo: require(`../assets/neo4j-icon.svg`),
           to: "/neo4j",
-          href: `https://neo4j.${hostDNS}:7473`
+          href: `https://neo4j.${hostDNS}:7473`,
         },
         {
           name: "Flyte",
           logo: require(`../assets/flyte.svg`),
           to: "/flyte",
-          href: `https://flyte.${hostDNS}/console`
-        }
-      ]
+          href: `https://flyte.${hostDNS}/console`,
+        },
+      ],
     };
-  }
+  },
 });
 </script>
 <style lang="scss" scoped>

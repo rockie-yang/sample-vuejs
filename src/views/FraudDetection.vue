@@ -41,9 +41,7 @@
             </p>
 
             <ul>
-              <li>
-                A group of two or more people organize into a fraud ring
-              </li>
+              <li>A group of two or more people organize into a fraud ring</li>
               <li>
                 The ring shares a subset of legitimate contact information, for
                 example phone numbers and addresses, combining them to create a
@@ -77,9 +75,7 @@
                 Collections processes ensue, but agents are never able to reach
                 the fraudster
               </li>
-              <li>
-                The uncollectible debt is written off
-              </li>
+              <li>The uncollectible debt is written off</li>
             </ul>
 
             <h5>Explanation of Solution</h5>
@@ -96,15 +92,9 @@
             analysis queries using a graph database, and running checks during
             key stages in the customer & account lifecycle, such as:
             <ul>
-              <li>
-                At the time the account is created
-              </li>
-              <li>
-                During an investigation
-              </li>
-              <li>
-                As soon as a credit balance threshold is hit
-              </li>
+              <li>At the time the account is created</li>
+              <li>During an investigation</li>
+              <li>As soon as a credit balance threshold is hit</li>
               <li>When a check is bounced</li>
             </ul>
 
@@ -142,7 +132,9 @@
         <b-row
           ><b-col md-7><b-table striped hover :items="table1"></b-table></b-col
           ><b-col
-            ><codemirror v-model="cypherShareInfo" :options="cmOptions"/></b-col
+            ><codemirror
+              v-model="cypherShareInfo"
+              :options="cmOptions" /></b-col
         ></b-row>
         <b-row> </b-row></b-container
     ></b-card>
@@ -211,7 +203,7 @@ export default {
         tabSize: 4,
         mode: "application/x-cypher-query",
         // theme: "base16-light",
-        lineNumbers: false
+        lineNumbers: false,
         // line: true
         // more CodeMirror options...
       },
@@ -248,9 +240,9 @@ ORDER BY 	FinancialRisk DESC`,
 
       neo: {
         cypherAll: "MATCH p=()-[r]->() RETURN p;",
-        uri: process.env.NEO4J_URI || "bolt://localhost:7687",
+        uri: process.env.NEO4J_URI || "bolt+s://bolt.lab.skysager.com:7687",
         user: process.env.NEO4J_USER || "neo4j",
-        password: process.env.NEO4J_PASSWORD || "admin"
+        password: process.env.NEO4J_PASSWORD || "KnockDataNu",
       },
 
       sample: `// Create account holders
@@ -344,28 +336,30 @@ CREATE (unsecuredLoan3:UnsecuredLoan {
 CREATE (phoneNumber2:PhoneNumber {
 			PhoneNumber: "555-555-1234" })<-[:HAS_PHONENUMBER]-(accountHolder3)
 
-RETURN *`
+RETURN *`,
     };
   },
   mounted() {
-    const driver = neo4j.driver(
-      "bolt://localhost:7687",
-      neo4j.auth.basic("neo4j", "admin")
-    );
+    const uri = process.env.NEO4J_URI || "bolt+s://bolt.lab.skysager.com:7687"; // "bolt://localhost:7687";
+    const user = process.env.NEO4J_USER || "neo4j";
+    const password = process.env.NEO4J_PASSWORD || "KnockDataNu"; // "admin",
+    console.log(`${uri}?${user}/${password}`);
+
+    const driver = neo4j.driver(uri, neo4j.auth.basic(user, password));
     const session = driver.session();
-    session.run(this.cypherShareInfo).then(result => {
+    session.run(this.cypherShareInfo).then((result) => {
       session.close();
-      this.table1 = result.records.map(record => record.toObject());
+      this.table1 = result.records.map((record) => record.toObject());
     });
 
     const session2 = driver.session();
-    session2.run(this.cypherFraudRing).then(result => {
+    session2.run(this.cypherFraudRing).then((result) => {
       session2.close();
       console.log(result);
-      this.table2 = result.records.map(record => record.toObject());
+      this.table2 = result.records.map((record) => record.toObject());
       console.log(this.table2);
     });
-  }
+  },
 };
 // export default class Home extends Vue {}
 </script>

@@ -32,7 +32,8 @@
         </b-col>
         <b-col xs-5 mt-5 lg-5>
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-secondary">Modify</button>
+            <button type="button" class="btn btn-secondary"
+            @click="updateFunction">Modify</button>
             <button
               type="button"
               class="btn btn-secondary"
@@ -85,13 +86,13 @@ export default {
   data() {
     return {
       environment: "AWS",
-      newFunctionName: "just-a-test",
+      newFunctionName: "",
       environments: ["AWS", "Azure", "On Premisise"],
       runtime: "python3.7",
       runtimes: ["python3.7", "node15.8"],
-      functionName: "just-a-test",
-      functionNames: ["just-a-test"],
-      data: "hello world",
+      functionName: "",
+      functionNames: [],
+      data: "",
       result: "",
       cmOptions: {
         tabSize: 4,
@@ -107,9 +108,6 @@ export default {
     };
   },
   methods: {
-    // deleteFunction() {
-    //   console.log(`delete function ${this.func} in ${this.environment}`);
-    // },
     deleteFunction() {
       const url = `http://157.230.251.182:5000/function/${this.functionName}`;
       console.log(`Deleting function ${url}`);
@@ -125,8 +123,7 @@ export default {
       axios
         .post(url, this.data, { headers: { "Content-Type": "text/plain" } })
         .then((res) => {
-          this.ret = res.data["result"].replace("b", "", 1);
-          this.result = res.data;
+          this.result = res.data["result"].replace("b", "", 1);
         })
         .catch((err) => console.log(err));
     },
@@ -138,16 +135,36 @@ export default {
         .post(url, this.code, { headers: { "Content-Type": "text/plain" } })
         .then((res) => {
           console.log(res.data);
-          this.result = res.data;
+          this.result = res.data['result'];
           this.functionNames.push(this.newFunctionName);
         })
         .catch((err) => console.log(err));
     },
-    async getFunctions() {
-      const res = await axios.get("http://157.230.251.182:5000/function");
-      return res.data;
-    },
+    updateFunction() {
+      const url = `http://157.230.251.182:5000/function/${this.functionName}?env=${this.environment}&runtime=${this.runtime}`;
+      console.log(url);
+      axios
+        .put(url, this.code, { headers: { "Content-Type": "text/plain" } })
+        .then((res) => {
+         console.log(res.data)
+         this.result = res.data['result'];
+	})
+        .catch((err) => console.log(err));
+    }
   },
+  watch : {
+       functionName:function(val) {
+          this.functionName = val;
+          const url = `http://157.230.251.182:5000/function/${this.functionName}`;
+          console.log(`get function ${url}`);
+          axios
+          .get(url)
+          .then((res) => this.code = res.data['result'])
+          .catch((err) => console.log(err));
+
+       }
+    },
+     
   mounted() {
     // this.functionNames = this.getFunctions();
     // console.log(this.functionNames);

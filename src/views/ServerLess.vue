@@ -62,7 +62,10 @@
         </b-col>
       </b-row>
       <b-row>
-        <div>{{ result }}</div>
+        <b-col xs-2>
+          <span class="label">Result: </span>
+          <span class="label">{{ result }}</span>
+        </b-col>
       </b-row>
     </b-container>
   </div>
@@ -113,7 +116,7 @@ export default {
       console.log(`Deleting function ${url}`);
       axios
         .delete(url)
-        .then((res) => console.log(res.data))
+        .then((res) => 	this.result = res.data['result'])
         .catch((err) => console.log(err));
     },
 
